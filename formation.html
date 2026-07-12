@@ -16,8 +16,8 @@
     .holo-rank-item:hover {
       transform: translateX(5px);
     }
-    
-    /* MODAL */
+
+    /* MODAL GRADES */
     .holo-modal-overlay {
       display: none;
       position: fixed;
@@ -109,6 +109,99 @@
       opacity: 1;
       text-shadow: 0 0 10px var(--holo-glow);
     }
+
+    /* MODAL POSTURES */
+    .holo-posture-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 8, 20, 0.85);
+      backdrop-filter: blur(4px);
+      z-index: 10002;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .holo-posture-overlay.active {
+      display: flex;
+    }
+
+    .holo-posture-box {
+      position: relative;
+      max-width: 500px;
+      width: 90%;
+      border: 1px solid var(--holo-cyan);
+      background: rgba(0, 26, 51, 0.95);
+      padding: 30px;
+      box-shadow: 0 0 40px var(--holo-glow), inset 0 0 30px rgba(0,240,255,0.05);
+      animation: postureIn 0.3s ease;
+    }
+
+    @keyframes postureIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    .holo-posture-box::before,
+    .holo-posture-box::after {
+      content: '';
+      position: absolute;
+      width: 15px; height: 15px;
+      border: 2px solid var(--holo-cyan);
+      box-shadow: 0 0 8px var(--holo-glow);
+    }
+
+    .holo-posture-box::before { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+    .holo-posture-box::after  { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+
+    .holo-posture-name {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-align: center;
+      text-shadow: 0 0 12px var(--holo-glow);
+      margin-bottom: 20px;
+    }
+
+    .holo-posture-image {
+      width: 100%;
+      max-width: 200px;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 20px;
+      border: 1px solid var(--holo-dim);
+      background: rgba(0,8,20,0.5);
+    }
+
+    .holo-posture-text {
+      text-align: center;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      opacity: 0.6;
+      line-height: 1.8;
+      padding: 15px;
+      border: 1px dashed var(--holo-dim);
+    }
+
+    .holo-posture-close {
+      position: absolute;
+      top: 10px; right: 15px;
+      background: none;
+      border: none;
+      color: var(--holo-cyan);
+      font-size: 1.5rem;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: opacity 0.3s;
+    }
+
+    .holo-posture-close:hover {
+      opacity: 1;
+      text-shadow: 0 0 10px var(--holo-glow);
+    }
   </style>
 </head>
 <body>
@@ -129,9 +222,9 @@
 
     <div class="holo-nav">
       <a href="index.html"><button>Accueil</button></a>
-      <a href="histoir.html"><button>Histoire du Corps</button></a>
+      <a href="histoire.html"><button>Histoire du Corps</button></a>
       <a href="formation.html"><button class="active">Formation Cadet</button></a>
-      <a href="unites.html"><button>Unités & Code Millitaire</button></a>
+      <a href="unites.html"><button>Unités</button></a>
     </div>
 
     <!-- SOMMAIRE -->
@@ -180,7 +273,7 @@
         <div class="holo-rank-category">Rang Académique</div>
         <p class="holo-rank-desc">Individus, hommes et femmes, désireux de s'engager dans l'armée et qui seront formés par des soldats avant de recevoir leur grade ou leur insigne de rang.</p>
         <div class="holo-rank-list">
-          <div class="holo-rank-item" onclick="openRankModal('Cadet', 'images/grades/cadet.png', 'Il sort de l académie et doit se faire formez pour devenir un homme du rang !')"><span class="rank-num">1</span> Cadet</div>
+          <div class="holo-rank-item" onclick="openRankModal('Cadet', 'images/grades/cadet.png', 'TEXTTEMPORAIREENDEVELOPEMENT')"><span class="rank-num">1</span> Cadet</div>
         </div>
       </div>
 
@@ -232,7 +325,7 @@
       </div>
     </div>
 
-        <!-- III - POSTURE ET TENUE -->
+    <!-- III - POSTURE ET TENUE -->
     <div class="holo-section" id="posture">
       <h2>III — Posture et Tenue</h2>
 
@@ -280,7 +373,7 @@
       </div>
     </div>
 
-       <!-- IV - ISTC -->
+    <!-- IV - ISTC -->
     <div class="holo-section" id="istc">
       <h2>IV — I.S.T.C.</h2>
       <p class="holo-intro">L'ISTC définit quatre règles de sécurité fondamentales :</p>
@@ -330,7 +423,7 @@
       <div class="holo-grid">
         <div class="holo-card">
           <div class="label">Médecin de Combat</div>
-          <div class="value" style="font-size:0.9rem;line-height:1.6;font-family:'Share Tech Mono',monospace;text-shadow:none;opacity:0.85;">Ils servent à assurer les premiers secours et maintenir en vie une section déployée au combat. Leurs capacités de soins sont limitées mais efficaces.</div>
+          <div class="value" style="font-size:0.9rem;line-height:1.6;font-family:'Share Tech Mono',monospace;text-shadow:none;opacity:0.85;">Ils servent à assurer les premiers secours et maintenir en vie une section déployée au combat. Leurs capacités de soins sont limités mais efficaces.</div>
         </div>
         <div class="holo-card">
           <div class="label">Ingénieur de Combat</div>
@@ -339,7 +432,7 @@
       </div>
     </div>
 
-          <!-- VI - SERMENT -->
+    <!-- VI - SERMENT -->
     <div class="holo-section" id="serment">
       <h2>VI — Serment</h2>
       <div class="holo-serment">
@@ -357,7 +450,17 @@
     </div>
   </div>
 
-  <!-- MODAL -->
+  <!-- MODAL POSTURES -->
+  <div class="holo-posture-overlay" id="postureModal" onclick="closePostureModal(event)">
+    <div class="holo-posture-box" onclick="event.stopPropagation()">
+      <button class="holo-posture-close" onclick="closePostureModal(event)">×</button>
+      <div class="holo-posture-name" id="modalPostureName">Posture</div>
+      <img class="holo-posture-image" id="modalPostureImage" src="" alt="Posture">
+      <div class="holo-posture-text" id="modalPostureText">TEXTTEMPORAIREENDEVELOPEMENT</div>
+    </div>
+  </div>
+
+  <!-- MODAL GRADES -->
   <div class="holo-modal-overlay" id="rankModal" onclick="closeRankModal(event)">
     <div class="holo-modal" onclick="event.stopPropagation()">
       <button class="holo-modal-close" onclick="closeRankModal(event)">×</button>
@@ -366,31 +469,7 @@
       <div class="holo-modal-text" id="modalRankText">TEXTTEMPORAIREENDEVELOPEMENT</div>
     </div>
   </div>
-  
-    // MODAL POSTURES
-    function openPostureModal(postureName, imagePath, postureText) {
-      document.getElementById('modalPostureName').textContent = postureName;
-      document.getElementById('modalPostureText').textContent = postureText;
 
-      const img = document.getElementById('modalPostureImage');
-      img.src = imagePath;
-      img.style.display = 'block';
-      img.onerror = function() {
-        this.style.display = 'none';
-      };
-      img.onload = function() {
-        this.style.display = 'block';
-      };
-
-      document.getElementById('postureModal').classList.add('active');
-    }
-
-    function closePostureModal(event) {
-      if (event.target === document.getElementById('postureModal') || event.target.classList.contains('holo-posture-close')) {
-        document.getElementById('postureModal').classList.remove('active');
-      }
-    }
-  
   <script>
     setTimeout(() => {
       document.getElementById('boot-screen').style.display = 'none';
@@ -406,7 +485,7 @@
     setInterval(updateClock, 1000);
     updateClock();
 
-    // MODAL
+    // MODAL GRADES
     function openRankModal(rankName, imagePath, rankText) {
       document.getElementById('modalRankName').textContent = rankName;
       document.getElementById('modalRankText').textContent = rankText;
@@ -430,9 +509,34 @@
       }
     }
 
+    // MODAL POSTURES
+    function openPostureModal(postureName, imagePath, postureText) {
+      document.getElementById('modalPostureName').textContent = postureName;
+      document.getElementById('modalPostureText').textContent = postureText;
+
+      const img = document.getElementById('modalPostureImage');
+      img.src = imagePath;
+      img.style.display = 'block';
+      img.onerror = function() {
+        this.style.display = 'none';
+      };
+      img.onload = function() {
+        this.style.display = 'block';
+      };
+
+      document.getElementById('postureModal').classList.add('active');
+    }
+
+    function closePostureModal(event) {
+      if (event.target === document.getElementById('postureModal') || event.target.classList.contains('holo-posture-close')) {
+        document.getElementById('postureModal').classList.remove('active');
+      }
+    }
+
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         document.getElementById('rankModal').classList.remove('active');
+        document.getElementById('postureModal').classList.remove('active');
       }
     });
   </script>
