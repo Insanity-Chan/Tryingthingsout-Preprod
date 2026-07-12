@@ -366,7 +366,31 @@
       <div class="holo-modal-text" id="modalRankText">TEXTTEMPORAIREENDEVELOPEMENT</div>
     </div>
   </div>
+  
+    // MODAL POSTURES
+    function openPostureModal(postureName, imagePath, postureText) {
+      document.getElementById('modalPostureName').textContent = postureName;
+      document.getElementById('modalPostureText').textContent = postureText;
 
+      const img = document.getElementById('modalPostureImage');
+      img.src = imagePath;
+      img.style.display = 'block';
+      img.onerror = function() {
+        this.style.display = 'none';
+      };
+      img.onload = function() {
+        this.style.display = 'block';
+      };
+
+      document.getElementById('postureModal').classList.add('active');
+    }
+
+    function closePostureModal(event) {
+      if (event.target === document.getElementById('postureModal') || event.target.classList.contains('holo-posture-close')) {
+        document.getElementById('postureModal').classList.remove('active');
+      }
+    }
+  
   <script>
     setTimeout(() => {
       document.getElementById('boot-screen').style.display = 'none';
