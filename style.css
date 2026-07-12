@@ -347,19 +347,6 @@ body::after {
   flex-shrink: 0;
 }
 
-  <!-- MODAL POSTURES -->
-  <div class="holo-modal-overlay" id="postureModal" onclick="closePostureModal(event)">
-    <div class="holo-modal" onclick="event.stopPropagation()">
-      <button class="holo-modal-close" onclick="closePostureModal(event)">×</button>
-      <div class="holo-modal-rank-name" id="modalPostureName">Posture</div>
-      <img class="holo-modal-image" id="modalPostureImage" src="" alt="Posture">
-      <div class="holo-modal-text" id="modalPostureText">TEXTTEMPORAIREENDEVELOPEMENT</div>
-    </div>
-  </div>
-
-  <!-- MODAL -->
-  <div class="holo-modal-overlay" id="rankModal" onclick="closeRankModal(event)">
-
 /* MODAL */
 .holo-modal-overlay {
   display: none;
