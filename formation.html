@@ -16,7 +16,7 @@
     .holo-rank-item:hover {
       transform: translateX(5px);
     }
-
+    
     /* MODAL */
     .holo-modal-overlay {
       display: none;
@@ -232,7 +232,7 @@
       </div>
     </div>
 
-    <!-- III - POSTURE ET TENUE -->
+        <!-- III - POSTURE ET TENUE -->
     <div class="holo-section" id="posture">
       <h2>III — Posture et Tenue</h2>
 
@@ -242,19 +242,27 @@
         <li>Lors de la convocation d'un homme du rang ou d'un sous-officier par un officier, ces derniers doivent se présenter en tenue de cérémonie (Tenue de cadet) et sans armes. Cela peut être optionnel si l'officier en décide.</li>
       </ul>
 
-      <p class="holo-intro">Les postures se divisent en deux catégories : les postures d'attente et les postures de déplacement.</p>
+      <p class="holo-intro">Les postures se divisent en trois catégories : les postures d'attente, les postures de déplacement et les postures de bataille. Cliquez sur une posture pour plus d'informations.</p>
 
       <h4>Postures d'attente</h4>
       <ul class="holo-list">
-        <li><strong>Le Salut militaire</strong> — Le soldat lève son bras droit, plaçant sa main tendue au niveau de sa tempe.</li>
-        <li><strong>Le Garde-à-vous</strong> — Bras le long du corps, c'est la position de base. Vous n'exécutez les postures de déplacement qu'au garde-à-vous.</li>
-        <li><strong>Le Repos</strong> — Se tenir debout, droit, les bras le long du corps, les talons joints, la tête haute, immobile.</li>
+        <li style="cursor:pointer;" onclick="openPostureModal('Le Salut militaire', 'images/postures/salut-militaire.png', 'TEXTTEMPORAIREENDEVELOPEMENT')"><strong>Le Salut militaire</strong> — Le soldat lève son bras droit, plaçant sa main tendue au niveau de sa tempe.</li>
+        <li style="cursor:pointer;" onclick="openPostureModal('Le Salut de terrain', 'images/postures/salut-terrain.png', 'TEXTTEMPORAIREENDEVELOPEMENT')"><strong>Le Salut de terrain</strong> — Texte temporaire à remplacer.</li>
+        <li style="cursor:pointer;" onclick="openPostureModal('Le Garde-à-vous', 'images/postures/garde-a-vous.png', 'TEXTTEMPORAIREENDEVELOPEMENT')"><strong>Le Garde-à-vous</strong> — Bras le long du corps, c'est la position de base. Vous n'exécutez les postures de déplacement qu'au garde-à-vous.</li>
+        <li style="cursor:pointer;" onclick="openPostureModal('Le Repos', 'images/postures/repos.png', 'TEXTTEMPORAIREENDEVELOPEMENT')"><strong>Le Repos</strong> — Se tenir debout, droit, les bras le long du corps, les talons joints, la tête haute, immobile.</li>
       </ul>
 
       <h4>Postures de déplacement</h4>
       <ul class="holo-list">
-        <li><strong>Droite-Droite / Gauche-Gauche</strong> (Quart de tour) — Lorsqu'un supérieur ordonne un [DROITE-DROITE], le premier ordre est préparatoire, vous attendez le second « droite » pour exécuter le quart de tour (45 degrés). Même principe pour la gauche.</li>
-        <li><strong>Le Demi-Tour Droite</strong> — Vous vous retournez à 180 degrés sur votre droite. Le demi-tour gauche n'existe pas.</li>
+        <li style="cursor:pointer;" onclick="openPostureModal('Droite-Droite / Gauche-Gauche', 'images/postures/quart-tour.png', 'TEXTTEMPORAIREENDEVELOPEMENT')"><strong>Droite-Droite / Gauche-Gauche</strong> (Quart de tour) — Lorsqu'un supérieur ordonne un [DROITE-DROITE], le premier ordre est préparatoire, vous attendez le second « droite » pour exécuter le quart de tour (45 degrés). Même principe pour la gauche.</li>
+        <li style="cursor:pointer;" onclick="openPostureModal('Le Demi-Tour Droite', 'images/postures/demi-tour.png', 'TEXTTEMPORAIREENDEVELOPEMENT')"><strong>Le Demi-Tour Droite</strong> — Vous vous retournez à 180 degrés sur votre droite. Le demi-tour gauche n'existe pas.</li>
+      </ul>
+
+      <h4>Postures de Bataille</h4>
+      <ul class="holo-list">
+        <li style="cursor:pointer;" onclick="openPostureModal('La Ligne de feux', 'images/postures/ligne-feux.png', 'TEXTTEMPORAIREENDEVELOPEMENT')"><strong>La Ligne de feux</strong> — Texte temporaire à remplacer.</li>
+        <li style="cursor:pointer;" onclick="openPostureModal('Le Triangle', 'images/postures/triangle.png', 'TEXTTEMPORAIREENDEVELOPEMENT')"><strong>Le Triangle</strong> — Texte temporaire à remplacer.</li>
+        <li style="cursor:pointer;" onclick="openPostureModal('Le Carré d\'escorte', 'images/postures/carre-escorte.png', 'TEXTTEMPORAIREENDEVELOPEMENT')"><strong>Le Carré d'escorte</strong> — Texte temporaire à remplacer.</li>
       </ul>
 
       <h3>II. Présentation d'un militaire</h3>
