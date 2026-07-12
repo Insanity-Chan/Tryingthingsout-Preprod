@@ -100,8 +100,7 @@ body::after {
   border: 1px solid var(--holo-dim);
   background: rgba(0, 26, 51, 0.3);
   backdrop-filter: blur(2px);
-  margin: 20px auto;
-  max-width: 1000px;
+  margin: 20px;
   padding: 30px;
 }
 
