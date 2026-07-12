@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HoloNet — Unités Militaires</title>
+  <meta name="description" content="Terminal d'accès aux bases de données de la République Galactique. Unités militaires et codes d'alerte.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="images/ICONE.png">
+
+  <!-- DISCORD / OPEN GRAPH EMBED -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="HoloNet — Unités Militaires">
+  <meta property="og:description" content="Tableau des unités militaires et codes d'alerte de la République.">
+  <meta property="og:url" content="https://insanity-chan.github.io/Tryingthingsout/unites.html">
+  <meta property="og:image" content="https://insanity-chan.github.io/Tryingthingsout/preview.png">
+  <meta property="og:site_name" content="HoloNet">
+  <meta name="theme-color" content="#00f0ff">
+
+  <!-- TWITTER CARD -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HoloNet — Unités Militaires">
+  <meta name="twitter:description" content="Tableau des unités militaires et codes d'alerte de la République.">
+  <meta name="twitter:image" content="https://insanity-chan.github.io/Tryingthingsout/preview.png">
+
+  <style>
+    /* === TABLEAU AMÉLIORÉ === */
+    .holo-table-wrap {
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+
+    .holo-table-unites {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    .holo-table-unites th {
+      text-align: left;
+      padding: 12px 10px;
+      border-bottom: 2px solid var(--holo-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.75rem;
+      color: var(--holo-cyan);
+      text-shadow: 0 0 5px var(--holo-glow);
+      background: rgba(0, 26, 51, 0.4);
+      white-space: nowrap;
+    }
+
+    .holo-table-unites td {
+      padding: 10px;
+      border-bottom: 1px solid var(--holo-dim);
+      opacity: 0.85;
+      line-height: 1.5;
+    }
+
+    .holo-table-unites tr:hover td {
+      background: var(--holo-dim);
+      opacity: 1;
+    }
+
+    .holo-table-unites tr:nth-child(even) td {
+      background: rgba(0, 240, 255, 0.02);
+    }
+
+    .holo-table-unites tr:nth-child(even):hover td {
+      background: var(--holo-dim);
+    }
+
+    /* === CODES D'ALERTE === */
+    .holo-codes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .holo-code-card {
+      border: 1px solid var(--holo-dim);
+      padding: 20px;
+      background: rgba(0, 26, 51, 0.2);
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .holo-code-card:hover {
+      border-color: var(--holo-cyan);
+      box-shadow: 0 0 15px var(--holo-glow);
+    }
+
+    .holo-code-card .code-name {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px var(--holo-glow);
+      margin-bottom: 10px;
+    }
+
+    .holo-code-card .code-desc {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      opacity: 0.8;
+    }
+
+    /* Couleurs spécifiques aux codes */
+    .code-noir .code-name { color: #111; text-shadow: 0 0 10px rgba(0,0,0,0.5); }
+    .code-noir { border-left: 3px solid #000; }
+
+    .code-rouge .code-name { color: #ff2233; text-shadow: 0 0 10px rgba(255,34,51,0.6); }
+    .code-rouge { border-left: 3px solid #ff2233; }
+
+    .code-orange .code-name { color: #ff8800; text-shadow: 0 0 10px rgba(255,136,0,0.6); }
+    .code-orange { border-left: 3px solid #ff8800; }
+
+    .code-vert .code-name { color: #00ff66; text-shadow: 0 0 10px rgba(0,255,102,0.6); }
+    .code-vert { border-left: 3px solid #00ff66; }
+
+    .code-blanc .code-name { color: #cccccc; text-shadow: 0 0 10px rgba(200,200,200,0.4); }
+    .code-blanc { border-left: 3px solid #cccccc; }
+  </style>
+</head>
+<body>
+
+  <div id="boot-screen">
+    <div class="boot-text">&gt; INITIALISATION DU TERMINAL HOLONET...</div>
+    <div class="boot-text">&gt; CONNEXION AU RÉSEAU DE LA RÉPUBLIQUE...</div>
+    <div class="boot-text">&gt; CHARGEMENT : UNITÉS & CODES D'ALERTE...</div>
+    <div class="boot-bar"><div class="boot-bar-fill"></div></div>
+  </div>
+
+  <div class="holo-header">
+    <h1>Unités Militaires</h1>
+    <div class="subtitle">Organisation & Codes d'Alerte — République Galactique</div>
+  </div>
+
+  <div class="holo-frame">
+
+    <div class="holo-nav">
+      <a href="index.html"><button>Accueil</button></a>
+      <a href="histoir.html"><button>Histoire du Corps</button></a>
+      <a href="formation.html"><button>Formation Cadet</button></a>
+      <a href="unites.html"><button class="active">Unités & Code Millitaire</button></a>
+    </div>
+
+    <!-- TABLEAU -->
+    <div class="holo-panel active">
+      <h2>Tableau des Unités</h2>
+      <p>Structure militaire républicaine — de l'unité de base au Corps d'Armée.</p>
+
+      <div class="holo-table-wrap">
+        <table class="holo-table-unites">
+          <thead>
+            <tr>
+              <th>Unité</th>
+              <th>Effectif</th>
+              <th>Commandé par</th>
+              <th>Grade type</th>
+              <th>Commentaires</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Soldat / Spécialiste</td>
+              <td>1</td>
+              <td>—</td>
+              <td>Soldat / Spécialiste</td>
+              <td>Base élémentaire</td>
+            </tr>
+            <tr>
+              <td>Équipe de combat</td>
+              <td>4-6</td>
+              <td>Chef d'équipe</td>
+              <td>Caporal</td>
+              <td>Équipe de base</td>
+            </tr>
+            <tr>
+              <td>Groupe tactique</td>
+              <td>12</td>
+              <td>Chef de groupe</td>
+              <td>Sergent</td>
+              <td>Environ 2-3 équipes</td>
+            </tr>
+            <tr>
+              <td>Section d'intervention</td>
+              <td>48</td>
+              <td>Chef de section</td>
+              <td>Sergent-Chef</td>
+              <td>4 groupes</td>
+            </tr>
+            <tr>
+              <td>Section renforcée</td>
+              <td>48-64</td>
+              <td>Chef de section supérieure</td>
+              <td>Enseigne</td>
+              <td>Supervision de plusieurs sections ou groupe plus grand</td>
+            </tr>
+            <tr>
+              <td>Peloton</td>
+              <td>192</td>
+              <td>Chef de peloton</td>
+              <td>Lieutenant</td>
+              <td>4 sections</td>
+            </tr>
+            <tr>
+              <td>Compagnie</td>
+              <td>768</td>
+              <td>Chef de compagnie</td>
+              <td>Capitaine</td>
+              <td>4 pelotons</td>
+            </tr>
+            <tr>
+              <td>Bataillon</td>
+              <td>3 072</td>
+              <td>Chef de bataillon</td>
+              <td>Major</td>
+              <td>4 compagnies</td>
+            </tr>
+            <tr>
+              <td>Régiment</td>
+              <td>12 288</td>
+              <td>Chef de régiment</td>
+              <td>Colonel</td>
+              <td>4 bataillons</td>
+            </tr>
+            <tr>
+              <td>Brigade</td>
+              <td>49 152</td>
+              <td>Chef de brigade</td>
+              <td>Commandant</td>
+              <td>4 régiments</td>
+            </tr>
+            <tr>
+              <td>Division</td>
+              <td>196 608</td>
+              <td>Chef de division</td>
+              <td>Commandant / Général</td>
+              <td>4 brigades</td>
+            </tr>
+            <tr>
+              <td>Corps d'armée</td>
+              <td>786 432</td>
+              <td>Chef de corps</td>
+              <td>Général</td>
+              <td>4 divisions</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- CODES D'ALERTE -->
+      <h2 style="margin-top: 50px;">Codes d'Alerte</h2>
+      <p>Significations des codes d'alerte républicains.</p>
+
+      <div class="holo-codes-grid">
+
+        <div class="holo-code-card code-noir">
+          <div class="code-name">Code Noir</div>
+          <div class="code-desc">Évacuation de la base ou du vaisseau.</div>
+        </div>
+
+        <div class="holo-code-card code-rouge">
+          <div class="code-name">Code Rouge</div>
+          <div class="code-desc">Tout le personnel à son poste de combat, sécurisation des zones clefs, et mise en sécurité des V.I.P.</div>
+        </div>
+
+        <div class="holo-code-card code-orange">
+          <div class="code-name">Code Orange</div>
+          <div class="code-desc">Menace potentielle, des patrouilles doivent être organisées et une vigilance accrue est de mise. Sabre éteint et Blaster dans les mains.</div>
+        </div>
+
+        <div class="holo-code-card code-vert">
+          <div class="code-name">Code Vert</div>
+          <div class="code-desc">Menace infectieuse, casque obligatoire ou au pire des respirateurs. Quarantaine de mise. Suivre les recommandations du personnel médical. Sabre éteint et Blaster dans les mains.</div>
+        </div>
+
+        <div class="holo-code-card code-blanc">
+          <div class="code-name">Code Blanc</div>
+          <div class="code-desc">Rien à Signaler. Sabre et Blaster à la ceinture ou dans holster.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="holo-status">
+      <span><span class="blink">●</span> CONNEXION SÉCURISÉE</span>
+      <span id="horloge">--:--:--</span>
+      <span>SECTEUR: CORUSCANT</span>
+    </div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('boot-screen').style.display = 'none';
+    }, 2800);
+
+    function updateClock() {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('horloge').textContent = `${h}:${m}:${s}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>

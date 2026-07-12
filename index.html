@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HoloNet — Terminal Galactique de la République</title>
+  <meta name="description" content="Terminal d'accès aux bases de données de la République Galactique. Histoire du Corps d'Armée et Formation Cadet.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="images/ICONE.png">
+
+  <!-- DISCORD / OPEN GRAPH EMBED -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="HoloNet — République Galactique">
+  <meta property="og:description" content="Terminal d'accès aux bases de données de la République. Histoire du Corps d'Armée et Formation Cadet.">
+  <meta property="og:url" content="https://insanity-chan.github.io/Tryingthingsout/">
+  <meta property="og:image" content="https://insanity-chan.github.io/Tryingthingsout/preview.png">
+  <meta property="og:site_name" content="HoloNet">
+  <meta name="theme-color" content="#00f0ff">
+
+  <!-- TWITTER CARD -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HoloNet — République Galactique">
+  <meta name="twitter:description" content="Terminal d'accès aux bases de données de la République.">
+  <meta name="twitter:image" content="https://insanity-chan.github.io/Tryingthingsout/preview.png">
+
+  <style>
+    /* === IMAGE EN ARRIÈRE-PLAN === */
+    /* Remplace le chemin par ton image */
+    body {
+      background-image: url('images/fond.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+
+    /* Voile sombre pour garder le texte lisible par-dessus l'image */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 8, 20, 0.75);
+      z-index: -1;
+    }
+
+    /* CARTES CLIQUABLES */
+    .holo-cards-link {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+      text-decoration: none;
+    }
+
+    .holo-card-link {
+      display: block;
+      text-decoration: none;
+      border: 1px solid var(--holo-dim);
+      padding: 25px 20px;
+      background: rgba(0, 26, 51, 0.4);
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .holo-card-link::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(0,240,255,0.05), transparent);
+      transition: left 0.5s;
+    }
+
+    .holo-card-link:hover::before {
+      left: 100%;
+    }
+
+    .holo-card-link:hover {
+      border-color: var(--holo-cyan);
+      box-shadow: 0 0 20px var(--holo-glow), inset 0 0 20px rgba(0,240,255,0.05);
+      transform: translateY(-3px);
+    }
+
+    .holo-card-link .card-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      opacity: 0.7;
+    }
+
+    .holo-card-link .card-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--holo-cyan);
+      text-shadow: 0 0 8px var(--holo-glow);
+      margin-bottom: 8px;
+    }
+
+    .holo-card-link .card-desc {
+      font-size: 0.8rem;
+      opacity: 0.5;
+      line-height: 1.6;
+    }
+
+    .holo-card-link .card-arrow {
+      margin-top: 15px;
+      font-size: 0.75rem;
+      opacity: 0.4;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .holo-card-link:hover .card-arrow {
+      opacity: 1;
+    }
+
+    .holo-placeholder {
+      border: 1px dashed var(--holo-dim);
+      padding: 25px 20px;
+      background: rgba(0, 26, 51, 0.2);
+      transition: all 0.3s;
+      cursor: default;
+    }
+
+    .holo-placeholder:hover {
+      border-color: rgba(0,240,255,0.3);
+      background: rgba(0, 26, 51, 0.3);
+    }
+
+    .holo-placeholder .card-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      opacity: 0.4;
+    }
+
+    .holo-placeholder .card-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--holo-cyan);
+      opacity: 0.4;
+      margin-bottom: 8px;
+    }
+
+    .holo-placeholder .card-desc {
+      font-size: 0.8rem;
+      opacity: 0.3;
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    .holo-placeholder .card-tag {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 0.7rem;
+      padding: 3px 10px;
+      border: 1px solid var(--holo-dim);
+      opacity: 0.3;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="boot-screen">
+    <div class="boot-text">&gt; INITIALISATION DU TERMINAL HOLONET...</div>
+    <div class="boot-text">&gt; CONNEXION AU RÉSEAU DE LA RÉPUBLIQUE...</div>
+    <div class="boot-text">&gt; AUTHENTIFICATION : ACCORDÉE</div>
+    <div class="boot-text">&gt; CHARGEMENT DES DONNÉES...</div>
+    <div class="boot-bar"><div class="boot-bar-fill"></div></div>
+  </div>
+
+  <div class="holo-header">
+    <h1>HoloNet</h1>
+    <div class="subtitle">Terminal Galactique — République</div>
+  </div>
+
+  <div class="holo-frame">
+
+    <div class="holo-nav">
+      <a href="index.html"><button class="active">Accueil</button></a>
+      <a href="histoir.html"><button>Histoire du Corps</button></a>
+      <a href="formation.html"><button>Formation Cadet</button></a>
+      <a href="unites.html"><button>Unités & Code Millitaires</button></a>
+    </div>
+
+    <div class="holo-panel active">
+      <h2>Bienvenue, Républicain(e)</h2>
+      <p>Ce terminal vous permet d'accéder aux bases de données de la République Galactique. Naviguez à travers les onglets pour consulter L'histoire du Corps d'Armée et la Formation Cadet.</p>
+
+      <div class="holo-cards-link">
+
+        <!-- CARTE CLIQUABLE 1 -->
+        <a href="histoir.html" class="holo-card-link">
+          <div class="card-icon">📋</div>
+          <div class="card-title">Histoire du Corps d'Armée</div>
+          <div class="card-desc">. . .</div>
+          <div class="card-arrow">▸ Accéder</div>
+        </a>
+
+        <!-- CARTE CLIQUABLE 2 -->
+        <a href="formation.html" class="holo-card-link">
+          <div class="card-icon">🎖️</div>
+          <div class="card-title">Formation Cadet</div>
+          <div class="card-desc">. . .</div>
+          <div class="card-arrow">▸ Accéder</div>
+        </a>
+
+         <!-- CARTE CLIQUABLE 3 -->
+       <a href="unites.html" class="holo-card-link">
+  <div class="card-icon">⚔️</div>
+  <div class="card-title">Unités Militaire & Code Millitaires</div>
+  <div class="card-desc">. . . </div>
+  <div class="card-arrow">▸ Accéder</div>
+</a>
+
+      </div>
+    </div>
+
+    <div class="holo-status">
+      <span><span class="blink">●</span> CONNEXION SÉCURISÉE</span>
+      <span id="horloge">--:--:--</span>
+      <span>SECTEUR: CORUSCANT</span>
+    </div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('boot-screen').style.display = 'none';
+    }, 2800);
+
+    function updateClock() {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('horloge').textContent = `${h}:${m}:${s}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>

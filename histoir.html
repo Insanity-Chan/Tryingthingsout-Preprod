@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HoloNet — Histoire du Corps d'Armée</title>
+  <meta name="description" content="Terminal d'accès aux bases de données de la République Galactique. Histoire du Corps d'Armée et Formation Cadet.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="images/ICONE.png">
+
+  <style>
+    .holo-timeline {
+      position: relative;
+      padding: 20px 0;
+    }
+
+    .holo-timeline::before {
+      content: '';
+      position: absolute;
+      left: 80px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, transparent, var(--holo-cyan), var(--holo-cyan), transparent);
+      box-shadow: 0 0 10px var(--holo-glow);
+    }
+
+    .holo-event {
+      position: relative;
+      margin-bottom: 50px;
+      padding-left: 120px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--holo-dim);
+    }
+
+    .holo-event:last-child {
+      border-bottom: none;
+    }
+
+    .holo-event::before {
+      content: '';
+      position: absolute;
+      left: 73px;
+      top: 5px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--bg-dark);
+      border: 2px solid var(--holo-cyan);
+      box-shadow: 0 0 12px var(--holo-glow);
+      z-index: 1;
+    }
+
+    .holo-event-year {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 65px;
+      text-align: right;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--holo-cyan);
+      text-shadow: 0 0 8px var(--holo-glow);
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+    }
+
+    .holo-event-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--holo-cyan);
+      text-shadow: 0 0 10px var(--holo-glow);
+      margin-bottom: 15px;
+    }
+
+    .holo-event-image {
+      width: 100%;
+      max-width: 400px;
+      height: 200px;
+      object-fit: cover;
+      border: 1px solid var(--holo-dim);
+      background: rgba(0, 8, 20, 0.5);
+      display: block;
+      margin-bottom: 15px;
+      transition: all 0.3s;
+    }
+
+    .holo-event-image:hover {
+      border-color: var(--holo-cyan);
+      box-shadow: 0 0 15px var(--holo-glow);
+    }
+
+    .holo-event-image.placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      opacity: 0.3;
+      font-style: italic;
+    }
+
+    .holo-event-text {
+      line-height: 1.8;
+      opacity: 0.85;
+      font-size: 0.9rem;
+    }
+
+    .holo-event-text p {
+      margin-bottom: 10px;
+    }
+
+    .holo-intro-banner {
+      padding: 20px;
+      border: 1px solid var(--holo-dim);
+      background: rgba(0, 26, 51, 0.3);
+      margin-bottom: 30px;
+      line-height: 1.8;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .holo-intro-banner p {
+      margin-bottom: 10px;
+    }
+
+    .holo-intro-banner p:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 600px) {
+      .holo-timeline::before {
+        left: 20px;
+      }
+
+      .holo-event {
+        padding-left: 50px;
+      }
+
+      .holo-event::before {
+        left: 13px;
+      }
+
+      .holo-event-year {
+        position: relative;
+        width: auto;
+        text-align: left;
+        margin-bottom: 10px;
+        font-size: 0.85rem;
+      }
+
+      .holo-event-image {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="boot-screen">
+    <div class="boot-text">&gt; INITIALISATION DU TERMINAL HOLONET...</div>
+    <div class="boot-text">&gt; CONNEXION AU RÉSEAU DE LA RÉPUBLIQUE...</div>
+    <div class="boot-text">&gt; CHARGEMENT : ARCHIVES HISTORIQUES...</div>
+    <div class="boot-bar"><div class="boot-bar-fill"></div></div>
+  </div>
+
+  <div class="holo-header">
+    <h1>Histoire du Corps</h1>
+    <div class="subtitle">Archives — Régiment de Coruscant</div>
+  </div>
+
+  <div class="holo-frame">
+
+    <div class="holo-nav">
+      <a href="index.html"><button>Accueil</button></a>
+      <a href="histoire.html"><button class="active">Histoire du Corps</button></a>
+      <a href="formation.html"><button>Formation Cadet</button></a>
+      <a href="unites.html"><button>Unités</button></a>
+    </div>
+
+    <div class="holo-panel active">
+      <h2>Origines du Régiment</h2>
+      <div class="holo-intro-banner">
+        <p>Né en 10 Après le Traité de Coruscant, le Régiment de Coruscant trouve ses racines dans une petite compagnie fondée à l'époque par la jeune Capitaine Hestia Elrona, tout juste sortie de l'académie militaire. À ses débuts, l'unité portait simplement le nom de sa planète de garnison principale.</p>
+        <p>D'abord détachée sur Tython pour participer à la formation des nouvelles recrues de l'armée républicaine, la compagnie a su s'illustrer par sa rigueur, son efficacité tactique et la cohésion de ses troupes.</p>
+        <p>Désormais un Corps d'Armée, cet ensemble de femmes et d'hommes combattent sous la direction de sa successrice, la Commandante Azura Lyadrin.</p>
+      </div>
+    </div>
+
+    <div class="holo-timeline">
+
+      <div class="holo-event">
+        <div class="holo-event-year">10 ATC</div>
+        <div class="holo-event-title">Campagne de Vogel</div>
+        <img class="holo-event-image" src="images/histoire/vogel.png" alt="Campagne de Vogel"
+             onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image à ajouter'">
+        <div class="holo-event-text">
+          <p>Le front de Vogel fut un des premiers théâtres d'opération du Régiment de Coruscant. Engagé dans une série de combats urbains intenses, le régiment mena des opérations conjointes avec le Maître Kromro et plusieurs Jedi dépêchés sur place pour soutenir la contre-offensive républicaine.</p>
+          <p>Les Jedi, en coordination avec les unités terrestres du régiment, permirent de reprendre plusieurs quartiers stratégiques d'une des villes sur la ligne de front et d'endiguer les forces impériales dans des zones à haute densité civile.</p>
+        </div>
+      </div>
+
+      <div class="holo-event">
+        <div class="holo-event-year">11 ATC</div>
+        <div class="holo-event-title">Opérations sur Balmorra</div>
+        <img class="holo-event-image" src="images/histoire/balmorra.png" alt="Opérations sur Balmorra"
+             onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image à ajouter'">
+        <div class="holo-event-text">
+          <p>Actuellement, le Régiment de Coruscant est engagé sur Balmorra, théâtre d'opérations majeures dans la guerre de reconquête républicaine.</p>
+          <p>Après plusieurs mois de combats, le régiment a pris part à l'assaut de l'usine de Sobrik, un complexe industriel vital utilisé par les forces impériales pour la production d'armement lourd.</p>
+          <p>Cette opération, menée en coordination étroite avec un contingent Jedi, fut une victoire décisive : la neutralisation des défenses automatiques, suivie d'un assaut combiné blindé et Jedi, permit de sécuriser entièrement le site.</p>
+          <p>Les Jedi ont agi aux côtés des compagnies d'assaut du Régiment, menant les troupes à travers les lignes ennemies dans une démonstration de force et de cohésion.</p>
+        </div>
+      </div>
+
+      <div class="holo-event">
+        <div class="holo-event-year">12 ATC</div>
+        <div class="holo-event-title">L'assaut de la base de l'Œil d'Azalus</div>
+        <img class="holo-event-image" src="images/histoire/azalus.png" alt="Assaut de l'Œil d'Azalus"
+             onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image à ajouter'">
+        <div class="holo-event-text">
+          <p>Le Sergent-Chef Sneed Reeves du Régiment de Coruscant fut capturé par l'organisation criminelle connue sous le nom de l'Œil d'Azalus.</p>
+          <p>Un assaut conjoint entre les forces républicaines et un détachement Jedi fut lancé pour tenter de le libérer. Au cours de l'opération, Reeves fut exécuté par ses ravisseurs avant que les troupes ne puissent atteindre sa position.</p>
+          <p>La base fut ensuite prise et sécurisée. En reconnaissance de son courage et de son dévouement exemplaire, Sneed Reeves fut promu au grade d'Enseigne et décoré à titre posthume lors d'une cérémonie sur Ord Mantell.</p>
+          <p>Sa mémoire demeure un symbole d'honneur au sein du Régiment de Coruscant.</p>
+        </div>
+      </div>
+
+      <div class="holo-event">
+        <div class="holo-event-year">13 ATC</div>
+        <div class="holo-event-title">Fermeture des Hyperportes Gree</div>
+        <img class="holo-event-image" src="images/histoire/gree.png" alt="Hyperportes Gree"
+             onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image à ajouter'">
+        <div class="holo-event-text">
+          <p>Lors des derniers évènements concernant les hyperportes, les forces armées de l'ancien régiment de Coruscant ont participé à la fermeture de cette dernière.</p>
+          <p>Nombreux des membres du régiment furent présents lors du sacrifice de Zayel Yra Vinya-Sa, ce dernier donna sa vie et son corps pour permettre la fermeture définitive de ces portes sauvant ainsi un nombre incalculable de vie.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="holo-status">
+      <span><span class="blink">●</span> CONNEXION SÉCURISÉE</span>
+      <span id="horloge">--:--:--</span>
+      <span>SECTEUR: CORUSCANT</span>
+    </div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('boot-screen').style.display = 'none';
+    }, 2800);
+
+    function updateClock() {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('horloge').textContent = `${h}:${m}:${s}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>
