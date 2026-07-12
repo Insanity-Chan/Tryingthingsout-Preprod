@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HoloNet — Sphère de la République</title>
+  <meta name="description" content="Terminal d'accès aux bases de données de la République Galactique. Information Sphère de la République.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="images/ICONE.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="HoloNet — Sphère de la République">
+  <meta property="og:description" content="Information Sphère de la République.">
+  <meta property="og:url" content="https://insanity-chan.github.io/Tryingthingsout/sphere.html">
+  <meta property="og:image" content="https://insanity-chan.github.io/Tryingthingsout/preview.png">
+  <meta property="og:site_name" content="HoloNet">
+  <meta name="theme-color" content="#00f0ff">
+</head>
+<body>
+
+  <div id="boot-screen">
+    <div class="boot-text">&gt; INITIALISATION DU TERMINAL HOLONET...</div>
+    <div class="boot-text">&gt; CONNEXION AU RÉSEAU DE LA RÉPUBLIQUE...</div>
+    <div class="boot-text">&gt; CHARGEMENT : SPHÈRE DE LA RÉPUBLIQUE...</div>
+    <div class="boot-bar"><div class="boot-bar-fill"></div></div>
+  </div>
+
+  <div class="holo-header">
+    <h1>Sphère de la République</h1>
+    <div class="subtitle">Informations — République Galactique</div>
+  </div>
+
+  <div class="holo-frame">
+
+    <div class="holo-nav">
+      <a href="index.html"><button>Accueil</button></a>
+      <a href="histoire.html"><button>Histoire du Corps</button></a>
+      <a href="formation.html"><button>Formation Cadet</button></a>
+      <a href="unites.html"><button>Unités</button></a>
+      <a href="sphere.html"><button class="active">Sphère</button></a>
+    </div>
+
+    <div class="holo-panel active">
+      <h2>Information Sphère de la République</h2>
+      <p>Texte temporaire — à remplacer manuellement.</p>
+    </div>
+
+    <div class="holo-status">
+      <span><span class="blink">●</span> CONNEXION SÉCURISÉE</span>
+      <span id="horloge">--:--:--</span>
+      <span>SECTEUR: CORUSCANT</span>
+    </div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('boot-screen').style.display = 'none';
+    }, 700);
+
+    function updateClock() {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('horloge').textContent = `${h}:${m}:${s}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>
