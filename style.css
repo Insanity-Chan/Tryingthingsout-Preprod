@@ -763,8 +763,8 @@ body::after {
   color: var(--text-white);
 }
 
-.code-noir .code-name { color: #111; text-shadow: 0 0 10px rgba(0,0,0,0.5); }
-.code-noir { border-left: 3px solid #000; }
+.code-noir .code-name { color: #888; text-shadow: 0 0 10px rgba(0,0,0,0.5); }
+.code-noir { border-left: 3px solid #666; }
 
 .code-rouge .code-name { color: #ff2233; text-shadow: 0 0 10px rgba(255,34,51,0.6); }
 .code-rouge { border-left: 3px solid #ff2233; }
