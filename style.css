@@ -517,6 +517,7 @@ body::after {
 
 .holo-serment {
   padding: 30px;
+  margin: 0 20px;
   border: 1px solid var(--holo-cyan);
   background: rgba(0,240,255,0.05);
   text-align: center;
@@ -528,6 +529,7 @@ body::after {
   box-shadow: 0 0 30px rgba(0,240,255,0.1), inset 0 0 30px rgba(0,240,255,0.05);
   color: var(--text-white);
 }
+
 
 .holo-banner {
   padding: 20px;
