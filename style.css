@@ -321,7 +321,7 @@ body::after {
   background: var(--holo-cyan);
   box-shadow: 0 0 10px var(--holo-glow);
   width: 0%;
-  animation: bootLoad 2.5s ease forwards;
+  animation: bootLoad 0.5s ease forwards;
 }
 
 @keyframes bootLoad { to { width: 100%; } }
