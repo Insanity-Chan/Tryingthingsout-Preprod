@@ -15,6 +15,127 @@
   <meta property="og:image" content="https://insanity-chan.github.io/Tryingthingsout/preview.png">
   <meta property="og:site_name" content="HoloNet">
   <meta name="theme-color" content="#00f0ff">
+
+  <style>
+    .holo-timeline {
+      position: relative;
+      padding: 20px 0;
+    }
+
+    .holo-timeline::before {
+      content: '';
+      position: absolute;
+      left: 200px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, transparent, var(--holo-cyan), var(--holo-cyan), transparent);
+      box-shadow: 0 0 10px var(--holo-glow);
+    }
+
+    .holo-event {
+      position: relative;
+      margin-bottom: 50px;
+      padding-left: 240px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--holo-dim);
+    }
+
+    .holo-event:last-child {
+      border-bottom: none;
+    }
+
+    .holo-event::before {
+      content: '';
+      position: absolute;
+      left: 193px;
+      top: 5px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--bg-dark);
+      border: 2px solid var(--holo-cyan);
+      box-shadow: 0 0 12px var(--holo-glow);
+      z-index: 1;
+    }
+
+    .holo-event-year {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 185px;
+      text-align: right;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--holo-cyan);
+      text-shadow: 0 0 8px var(--holo-glow);
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+    }
+
+    .holo-event-image {
+      width: 100%;
+      max-width: 400px;
+      height: 200px;
+      object-fit: cover;
+      border: 1px solid var(--holo-dim);
+      background: rgba(0, 8, 20, 0.5);
+      display: block;
+      margin-bottom: 15px;
+      transition: all 0.3s;
+    }
+
+    .holo-event-image:hover {
+      border-color: var(--holo-cyan);
+      box-shadow: 0 0 15px var(--holo-glow);
+    }
+
+    .holo-event-image.placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      opacity: 0.3;
+      font-style: italic;
+    }
+
+    .holo-event-text {
+      line-height: 1.8;
+      opacity: 0.9;
+      font-size: 0.9rem;
+    }
+
+    .holo-event-text p {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .holo-timeline::before {
+        left: 20px;
+      }
+
+      .holo-event {
+        padding-left: 50px;
+      }
+
+      .holo-event::before {
+        left: 13px;
+      }
+
+      .holo-event-year {
+        position: relative;
+        width: auto;
+        text-align: left;
+        margin-bottom: 10px;
+        font-size: 0.85rem;
+      }
+
+      .holo-event-image {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -34,15 +155,74 @@
 
     <div class="holo-nav">
       <a href="index.html"><button>Accueil</button></a>
-      <a href="histoire.html"><button>Histoire du Corps</button></a>
+      <a href="histoir.html"><button>Histoire du Corps</button></a>
       <a href="formation.html"><button>Formation Cadet</button></a>
-      <a href="unites.html"><button>Unités</button></a>
+      <a href="unites.html"><button>Unités & Code Millitaire</button></a>
       <a href="sphere.html"><button class="active">Sphère</button></a>
     </div>
 
     <div class="holo-panel active">
-      <h2>Information Sphère de la République</h2>
-      <p>Texte temporaire — à remplacer manuellement.</p>
+      <h2>Les Sphères de la République</h2>
+      <p>Les Sphères représentent les différents domaines d'action de la République Galactique. Chaque Sphère a un rôle précis dans le fonctionnement de l'État.</p>
+    </div>
+
+    <div class="holo-timeline">
+
+      <!-- SPHÈRE 1 -->
+      <div class="holo-event">
+        <div class="holo-event-year">Logistique &<br>Production</div>
+        <div class="holo-event-title">Sphère de la Logistique & Production</div>
+        <img class="holo-event-image" src="images/spheres/logistique-production.png" alt="Sphère de la Logistique & Production"
+             onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image à ajouter'">
+        <div class="holo-event-text">
+          <p>Description : ???? (Texte temporaire à remplacer.)</p>
+        </div>
+      </div>
+
+      <!-- SPHÈRE 2 -->
+      <div class="holo-event">
+        <div class="holo-event-year">Loi &<br>Justice</div>
+        <div class="holo-event-title">Sphère de la Loi & Justice</div>
+        <img class="holo-event-image" src="images/spheres/loi-justice.png" alt="Sphère de la Loi & Justice"
+             onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image à ajouter'">
+        <div class="holo-event-text">
+          <p>La Loi & Justice est la garante de l'ordre et du respect des lois républicaines. Elle veille à leur application auprès de tous les membres de la République, qu'ils soient Jedi, militaires ou citoyens. Elle traite les infractions signalées, enquête sur les plaintes fondées et veille à ce que chacun réponde de ses actes. Son rôle est d'assurer une justice équitable, impartiale et accessible à tous.</p>
+        </div>
+      </div>
+
+      <!-- SPHÈRE 3 -->
+      <div class="holo-event">
+        <div class="holo-event-year">Expansion &<br>Diplomacie</div>
+        <div class="holo-event-title">Sphère de l'Expansion et de la Diplomatie</div>
+        <img class="holo-event-image" src="images/spheres/expansion-diplomacie.png" alt="Sphère de l'Expansion et de la Diplomatie"
+             onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image à ajouter'">
+        <div class="holo-event-text">
+          <p>Description : ???? (Texte temporaire à remplacer.)</p>
+        </div>
+      </div>
+
+      <!-- SPHÈRE 4 -->
+      <div class="holo-event">
+        <div class="holo-event-year">Affaires<br>Militaires</div>
+        <div class="holo-event-title">Sphère des Affaires Militaires</div>
+        <img class="holo-event-image" src="images/spheres/affaires-militaires.png" alt="Sphère des Affaires Militaires"
+             onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image à ajouter'">
+        <div class="holo-event-text">
+          <p>La Sphère des Affaires Militaires est chargée de développer les capacités stratégiques et tactiques de la République. Elle forme ses membres à la planification, à la coordination et au commandement des opérations. Elle repose sur la discipline, l'engagement et la maîtrise des stratégies afin de préparer les forces républicaines aux missions à venir.</p>
+        </div>
+      </div>
+
+      <!-- SPHÈRE 5 -->
+      <div class="holo-event">
+        <div class="holo-event-year">Recherche<br>Médicale & Tech.</div>
+        <div class="holo-event-title">Sphère de la Recherche Médicale et Technologique</div>
+        <img class="holo-event-image" src="images/spheres/recherche-medicale-tech.png" alt="Sphère de la Recherche Médicale et Technologique"
+             onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image à ajouter'">
+        <div class="holo-event-text">
+          <p>La Sphère de la Recherche Médicale et Technologique a pour vocation de laisser libre cours aux esprits, en leur accordant une liberté de création limitée seulement par leur imagination et leur éthique. Qu'il s'agisse d'ingénierie biomécanique, de biochimie ou encore d'immunologie, nous recherchons des esprits savants souhaitant mettre leurs compétences et leur savoir au service d'une cause juste et bienveillante. Nous prônons efficacité, innovation et droiture.</p>
+        </div>
+      </div>
+
     </div>
 
     <div class="holo-status">
