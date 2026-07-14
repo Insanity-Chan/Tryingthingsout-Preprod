@@ -110,7 +110,7 @@
       text-shadow: 0 0 10px var(--holo-glow);
     }
 
-    /* MODAL POSTURES */
+        /* MODAL POSTURES */
     .holo-posture-overlay {
       display: none;
       position: fixed;
@@ -129,11 +129,11 @@
 
     .holo-posture-box {
       position: relative;
-      max-width: 500px;
+      max-width: 750px;
       width: 90%;
       border: 1px solid var(--holo-cyan);
       background: rgba(0, 26, 51, 0.95);
-      padding: 30px;
+      padding: 45px;
       box-shadow: 0 0 40px var(--holo-glow), inset 0 0 30px rgba(0,240,255,0.05);
       animation: postureIn 0.3s ease;
     }
@@ -147,7 +147,7 @@
     .holo-posture-box::after {
       content: '';
       position: absolute;
-      width: 15px; height: 15px;
+      width: 23px; height: 23px;
       border: 2px solid var(--holo-cyan);
       box-shadow: 0 0 8px var(--holo-glow);
     }
@@ -157,42 +157,42 @@
 
     .holo-posture-name {
       font-family: 'Orbitron', sans-serif;
-      font-size: 1.4rem;
+      font-size: 2.1rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       text-align: center;
       text-shadow: 0 0 12px var(--holo-glow);
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     .holo-posture-image {
       width: 100%;
-      max-width: 200px;
-      height: 200px;
+      max-width: 300px;
+      height: 300px;
       object-fit: cover;
       display: block;
-      margin: 0 auto 20px;
+      margin: 0 auto 30px;
       border: 1px solid var(--holo-dim);
       background: rgba(0,8,20,0.5);
     }
 
     .holo-posture-text {
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 1.35rem;
       letter-spacing: 0.1em;
       opacity: 0.6;
       line-height: 1.8;
-      padding: 15px;
+      padding: 23px;
       border: 1px dashed var(--holo-dim);
     }
 
     .holo-posture-close {
       position: absolute;
-      top: 10px; right: 15px;
+      top: 15px; right: 23px;
       background: none;
       border: none;
       color: var(--holo-cyan);
-      font-size: 1.5rem;
+      font-size: 2.25rem;
       cursor: pointer;
       opacity: 0.6;
       transition: opacity 0.3s;
