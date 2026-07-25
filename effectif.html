@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HoloNet — Effectif Gradé</title>
+  <meta name="description" content="Terminal d'accès aux bases de données de la République Galactique. Effectif Gradé.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="images/ICONE.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="HoloNet — Effectif Gradé">
+  <meta property="og:description" content="Effectif Gradé de la République Galactique.">
+  <meta property="og:url" content="https://insanity-chan.github.io/Tryingthingsout/effectif.html">
+  <meta property="og:image" content="https://insanity-chan.github.io/Tryingthingsout/preview.png">
+  <meta property="og:site_name" content="HoloNet">
+  <meta name="theme-color" content="#00f0ff">
+
+  <style>
+    .holo-effectif-block {
+      margin: 25px 0;
+      padding: 20px;
+      border: 1px solid var(--holo-dim);
+      background: rgba(0, 26, 51, 0.2);
+    }
+
+    .holo-effectif-grade {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--holo-cyan);
+      text-shadow: 0 0 10px var(--holo-glow);
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--holo-dim);
+    }
+
+    .holo-effectif-names {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .holo-effectif-name {
+      font-size: 1rem;
+      padding: 8px 15px;
+      border-left: 2px solid var(--holo-cyan);
+      background: rgba(0, 26, 51, 0.3);
+      color: var(--text-white);
+      transition: all 0.3s;
+    }
+
+    .holo-effectif-name:hover {
+      background: var(--holo-dim);
+      transform: translateX(5px);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="boot-screen">
+    <div class="boot-text">&gt; INITIALISATION DU TERMINAL HOLONET...</div>
+    <div class="boot-text">&gt; CONNEXION AU RÉSEAU DE LA RÉPUBLIQUE...</div>
+    <div class="boot-text">&gt; CHARGEMENT : EFFECTIF GRADÉ...</div>
+    <div class="boot-bar"><div class="boot-bar-fill"></div></div>
+  </div>
+
+  <div class="holo-header">
+    <h1>Effectif Gradé</h1>
+    <div class="subtitle">Personnel — République Galactique</div>
+  </div>
+
+  <div class="holo-frame">
+
+    <div class="holo-nav">
+      <a href="index.html"><button>Accueil</button></a>
+      <a href="histoir.html"><button>Histoire du Corps</button></a>
+      <a href="formation.html"><button>Formation Cadet</button></a>
+      <a href="unites.html"><button>Unités & Code Millitaire</button></a>
+      <a href="sphere.html"><button>Sphère</button></a>
+      <a href="effectif.html"><button class="active">Effectif</button></a>
+    </div>
+
+    <div class="holo-panel active">
+      <h2>Effectif Gradé</h2>
+      <p>Liste du personnel gradé du Corps d'Armée de la République Galactique.</p>
+
+      <div class="holo-effectif-block">
+        <div class="holo-effectif-grade">Commandant</div>
+        <div class="holo-effectif-names">
+          <div class="holo-effectif-name">Azura Lyadrin</div>
+        </div>
+      </div>
+
+      <div class="holo-effectif-block">
+        <div class="holo-effectif-grade">Colonel</div>
+        <div class="holo-effectif-names">
+          <div class="holo-effectif-name">Alexei Krukov</div>
+        </div>
+      </div>
+
+      <div class="holo-effectif-block">
+        <div class="holo-effectif-grade">Major</div>
+        <div class="holo-effectif-names">
+          <div class="holo-effectif-name">Nova Krukov</div>
+        </div>
+      </div>
+
+      <div class="holo-effectif-block">
+        <div class="holo-effectif-grade">Capitaine</div>
+        <div class="holo-effectif-names">
+          <div class="holo-effectif-name">Kei'kow</div>
+          <div class="holo-effectif-name">Robar Deoz</div>
+        </div>
+      </div>
+
+      <div class="holo-effectif-block">
+        <div class="holo-effectif-grade">Lieutenant</div>
+        <div class="holo-effectif-names">
+          <div class="holo-effectif-name">Louis</div>
+          <div class="holo-effectif-name">Tom Kal'dram</div>
+          <div class="holo-effectif-name">Themistocles'Kow</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="holo-status">
+      <span><span class="blink">●</span> CONNEXION SÉCURISÉE</span>
+      <span id="horloge">--:--:--</span>
+      <span>SECTEUR: CORUSCANT</span>
+    </div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('boot-screen').style.display = 'none';
+    }, 700);
+
+    function updateClock() {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('horloge').textContent = `${h}:${m}:${s}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>
