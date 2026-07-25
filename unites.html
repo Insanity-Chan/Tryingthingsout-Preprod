@@ -285,6 +285,305 @@
 
       </div>
     </div>
+      <!-- MÉDAILLES & DÉCORATIONS -->
+      <h2 style="margin-top: 50px;">Médailles & Décorations</h2>
+      <p>Décorations de la République Galactique.</p>
+
+      <style>
+        .holo-medaille-category {
+          margin-top: 30px;
+          padding: 20px;
+          border: 1px solid var(--holo-dim);
+          background: rgba(0, 26, 51, 0.2);
+        }
+
+        .holo-medaille-category-title {
+          font-family: 'Orbitron', sans-serif;
+          font-size: 1.2rem;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          color: var(--holo-cyan);
+          text-shadow: 0 0 10px var(--holo-glow);
+          margin-bottom: 20px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid var(--holo-cyan);
+        }
+
+        .holo-medaille-item {
+          display: flex;
+          gap: 20px;
+          padding: 15px 0;
+          border-bottom: 1px solid rgba(0,240,255,0.05);
+        }
+
+        .holo-medaille-item:last-child {
+          border-bottom: none;
+        }
+
+        .holo-medaille-info {
+          flex: 1;
+        }
+
+        .holo-medaille-name {
+          font-family: 'Orbitron', sans-serif;
+          font-size: 1rem;
+          letter-spacing: 0.1em;
+          color: var(--holo-cyan);
+          text-shadow: 0 0 8px var(--holo-glow);
+          margin-bottom: 8px;
+        }
+
+        .holo-medaille-desc {
+          font-size: 0.85rem;
+          line-height: 1.7;
+          opacity: 0.8;
+          color: var(--text-white);
+        }
+
+        .holo-medaille-image {
+          width: 100px;
+          height: 100px;
+          object-fit: cover;
+          border: 1px solid var(--holo-dim);
+          background: rgba(0,8,20,0.5);
+          flex-shrink: 0;
+          transition: all 0.3s;
+        }
+
+        .holo-medaille-image:hover {
+          border-color: var(--holo-cyan);
+          box-shadow: 0 0 15px var(--holo-glow);
+        }
+
+        .holo-medaille-image.placeholder {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.7rem;
+          opacity: 0.3;
+          font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+          .holo-medaille-item {
+            flex-direction: column-reverse;
+          }
+
+          .holo-medaille-image {
+            width: 80px;
+            height: 80px;
+          }
+        }
+      </style>
+
+      <!-- MÉDAILLES MAJEURES -->
+      <div class="holo-medaille-category">
+        <div class="holo-medaille-category-title">Médailles Majeures</div>
+
+        <div class="holo-medaille-item">
+          <div class="holo-medaille-info">
+            <div class="holo-medaille-name">Croix de Gloire</div>
+            <div class="holo-medaille-desc">La Croix de Gloire est la plus haute distinction décernée pour héroïsme extraordinaire, les récipiendaires sont aussi reconnus comme « Légende de la République ».</div>
+          </div>
+          <img class="holo-medaille-image" src="images/medailles/croix-gloire.png" alt="Croix de Gloire"
+               onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
+        </div>
+
+        <div class="holo-medaille-item">
+          <div class="holo-medaille-info">
+            <div class="holo-medaille-name">Médaille du Héros du Peuple</div>
+            <div class="holo-medaille-desc">La Médaille du Héros du Peuple est décernée à ceux ayant sauvé toute une population, obtenant leur reconnaissance totale.</div>
+          </div>
+          <img class="holo-medaille-image" src="images/medailles/heros-peuple.png" alt="Médaille du Héros du Peuple"
+               onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
+        </div>
+
+        <div class="holo-medaille-item">
+          <div class="holo-medaille-info">
+            <div class="holo-medaille-name">Médaille du Défenseur de l'Unité Galactique</div>
+            <div class="holo-medaille-desc">La Médaille du Défenseur de l'Unité Galactique est décernée à ceux ayant protégé au péril de sa vie un membre de la délégation sénatoriale ou du Haut Commandement (Officiers Généraux) de l'armée Républicaine.</div>
+          </div>
+          <img class="holo-medaille-image" src="images/medailles/defenseur-unite.png" alt="Médaille du Défenseur de l'Unité Galactique"
+               onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
+        </div>
+
+        <div class="holo-medaille-item">
+          <div class="holo-medaille-info">
+            <div class="holo-medaille-name">Héros de la République</div>
+            <div class="holo-medaille-desc">Prestigieuse distinction qui commémore un acte fort pour la prospérité de la République.</div>
+          </div>
+          <img class="holo-medaille-image" src="images/medailles/heros-republique.png" alt="Héros de la République"
+               onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
+        </div>
+      </div>
+
+      <!-- MÉDAILLES MINEURES -->
+      <div class="holo-medaille-category">
+        <div class="holo-medaille-category-title">Médailles Mineures</div>
+
+        <div class="holo-medaille-item">
+          <div class="holo-medaille-info">
+            <div class="holo-medaille-name">Médaille de Chef de Guerre</div>
+            <div class="holo-medaille-desc">La Médaille du Chef de Guerre s'obtient à travers différents accomplissements, notamment des opérations de grande envergure mêlant stratégie et combat. Elle permet à son porteur d'être craint de ses ennemis et respecté de ses alliés.</div>
+          </div>
+          <img class="holo-medaille-image" src="images/medailles/chef-guerre.png" alt="Médaille de Chef de Guerre"
+               onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
+        </div>
+
+        <div class="holo-medaille-item">
+          <div class="holo-medaille-info">
+            <div class="holo-medaille-name">Médaille du Progrès</div>
+            <div class="holo-medaille-desc">La Médaille du Progrès est une récompense décernée à des membres de l'armée républicaine qui ont fait leurs preuves dans des environnements hostiles. Elle a déjà été décernée pour avoir réussi à établir une nouvelle base républicaine ou un avant-poste dans un secteur de la bordure infesté de pirates.</div>
+          </div>
+          <img class="holo-medaille-image" src="images/medailles/progres.png" alt="Médaille du Progrès"
+               onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
+        </div>
+
+        <div class="holo-medaille-item">
+          <div class="holo-medaille-info">
+            <div class="holo-medaille-name">Médaille de la Vaillance</div>
+            <div class="holo-medaille-desc">La Médaille de la Vaillance est une récompense militaire prestigieuse de l'armée Républicaine. C'est une récompense d'une certaine importance. Elle a été présentée aux soldats républicains pour leur bravoure remarquable sur le champ de bataille. Il s'agit d'un prix de tir réel et nécessite peut-être des blessures pour sa réalisation. Elle a déjà été décernée pour avoir secouru des soldats blessés sous le feu de territoire ennemi.</div>
+          </div>
+          <img class="holo-medaille-image" src="images/medailles/vaillance.png" alt="Médaille de la Vaillance"
+               onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
+        </div>
+
+        <div class="holo-medaille-item">
+          <div class="holo-medaille-info">
+            <div class="holo-medaille-name">Médaille de la Gratitude</div>
+            <div class="holo-medaille-desc">La Médaille de la Gratitude est remise pour loyaux services lors du départ de membres ayant marqué l'armée Républicaine durant des années.</div>
+          </div>
+          <img class="holo-medaille-image" src="images/medailles/gratitude.png" alt="Médaille de la Gratitude"
+               onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
+        </div>
+
+        <div class="holo-medaille-item">
+          <div class="holo-medaille-info">
+            <div class="holo-medaille-name">Médaille pour Services Distingués</div>
+            <div class="holo-medaille-desc">Médaille décernée aux soldats ayant prouvé leur valeur grâce à leurs actes et ayant avantagé la République.</div>
+          </div>
+          <img class="holo-medaille-image" src="images/medailles/services-distingues.png" alt="Médaille pour Services Distingués"
+               onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
+        </div>
+
+        <div class="holo-medaille-item">
+          <div class="holo-medaille-info">
+            <div class="holo-medaille-name">Médaille du Vétéran</div>
+            <div class="holo-medaille-desc">La Médaille du Vétéran est décernée à ceux ayant survécu à de nombreuses campagnes militaires et qui possèdent une certaine ancienneté au sein de l'armée Républicaine.</div>
+          </div>
+          <img class="holo-medaille-image" src="images/medailles/veteran.png" alt="Médaille du Vétéran"
+               onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
+        </div>
+
+        <div class="holo-medaille-item">
+          <div class="holo-medaille-info">
+            <div class="holo-medaille-name">Croix du Pilote</div>
+            <div class="holo-medaille-desc">Médaille récompensant les as du pilotage.</div>
+          </div>
+          <img class="holo-medaille-image" src="images/medailles/croix-pilote.png" alt="Croix du Pilote"
+               onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
+        </div>
+      </div>
+
+      <!-- DISTINCTIONS DE QUALIFICATIONS -->
+      <div class="holo-medaille-category">
+        <div class="holo-medaille-category-title">Distinctions de Qualifications</div>
+
+        <div class="holo-medaille-item">
+          <div class="holo-medaille-info">
+            <div class="holo-medaille-name">Médaille de l'Excellence Mécanique</div>
+            <div class="holo-medaille-desc">Médaille remise à des ingénieurs d'exception ayant plus que prouvé leur capacité dans l'ingénierie, capables de réparer tout et n'importe quoi et de mener des projets complexes.</div>
+          </div>
+          <img class="holo-medaille-image" src="images/medailles/excellence-mecanique.png" alt="Médaille de l'Excellence Mécanique"
+               onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
+        </div>
+
+        <div class="holo-medaille-item">
+          <div class="holo-medaille-info">
+            <div class="holo-medaille-name">Médaille des Arts de la Médecine</div>
+            <div class="holo-medaille-desc">La Médaille des Arts de la Médecine est décernée à ceux ayant des compétences dans la médecine, la faisant progresser, évoluer et instruire aux autres membres du personnel médical de la République, mêlant avec perfection les nombreux outils médicaux qui existent.</div>
+          </div>
+          <img class="holo-medaille-image" src="images/medailles/arts-medecine.png" alt="Médaille des Arts de la Médecine"
+               onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
+        </div>
+
+        <div class="holo-medaille-item">
+          <div class="holo-medaille-info">
+            <div class="holo-medaille-name">Médaille de l'Excellence Médicale</div>
+            <div class="holo-medaille-desc">Médaille remise au personnel qui ont de par leur expérience en médecine militaire, sauvé des vies et aidé des alliés dans le besoin en pleine bataille courant leur secours malgré les tirs ennemis.</div>
+          </div>
+          <img class="holo-medaille-image" src="images/medailles/excellence-medicale.png" alt="Médaille de l'Excellence Médicale"
+               onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
+        </div>
+
+        <div class="holo-medaille-item">
+          <div class="holo-medaille-info">
+            <div class="holo-medaille-name">Ruban de l'Excellence Médicale</div>
+            <div class="holo-medaille-desc">Médaille remise au membre ayant prouvé son engagement dans la médecine et prouvé sa valeur dans celle-ci, jamais pour rien au monde ils ne trahiront leur code.</div>
+          </div>
+          <img class="holo-medaille-image" src="images/medailles/ruban-excellence-medicale.png" alt="Ruban de l'Excellence Médicale"
+               onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
+        </div>
+      </div>
+
+      <!-- RUBANS -->
+      <div class="holo-medaille-category">
+        <div class="holo-medaille-category-title">Rubans</div>
+
+        <div class="holo-medaille-item">
+          <div class="holo-medaille-info">
+            <div class="holo-medaille-name">Ruban de Félicitations de l'État-Major</div>
+            <div class="holo-medaille-desc">Remis au membre ayant mené à bien plusieurs missions et objectifs donnés par le comité et fournissant un travail exemplaire.</div>
+          </div>
+          <img class="holo-medaille-image" src="images/medailles/ruban-felicitations.png" alt="Ruban de Félicitations de l'État-Major"
+               onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
+        </div>
+
+        <div class="holo-medaille-item">
+          <div class="holo-medaille-info">
+            <div class="holo-medaille-name">Ruban de l'Encouragement de l'État-Major</div>
+            <div class="holo-medaille-desc">Ruban remis après vote du comité aux personnes ayant travaillé et fait des progrès notables.</div>
+          </div>
+          <img class="holo-medaille-image" src="images/medailles/ruban-encouragement-etatmajor.png" alt="Ruban de l'Encouragement de l'État-Major"
+               onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
+        </div>
+
+        <div class="holo-medaille-item">
+          <div class="holo-medaille-info">
+            <div class="holo-medaille-name">Ruban de l'Encouragement</div>
+            <div class="holo-medaille-desc">Souvent accordé aux républicains ayant fait plusieurs missions, étant habitués à celles-ci.</div>
+          </div>
+          <img class="holo-medaille-image" src="images/medailles/ruban-encouragement.png" alt="Ruban de l'Encouragement"
+               onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
+        </div>
+
+        <div class="holo-medaille-item">
+          <div class="holo-medaille-info">
+            <div class="holo-medaille-name">Ruban de la Discipline Exemplaire</div>
+            <div class="holo-medaille-desc">Républicain ayant fait preuve d'un comportement exemplaire en tout temps sur base comme en OPEX.</div>
+          </div>
+          <img class="holo-medaille-image" src="images/medailles/ruban-discipline.png" alt="Ruban de la Discipline Exemplaire"
+               onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
+        </div>
+
+        <div class="holo-medaille-item">
+          <div class="holo-medaille-info">
+            <div class="holo-medaille-name">Ruban de l'Instructeur Aguerri</div>
+            <div class="holo-medaille-desc">Républicain ayant mis un point d'honneur à la formation des jeunes.</div>
+          </div>
+          <img class="holo-medaille-image" src="images/medailles/ruban-instructeur.png" alt="Ruban de l'Instructeur Aguerri"
+               onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
+        </div>
+
+        <div class="holo-medaille-item">
+          <div class="holo-medaille-info">
+            <div class="holo-medaille-name">Ruban du Soldat Confirmé</div>
+            <div class="holo-medaille-desc">Républicain ayant fait preuve d'un comportement exemplaire en tout temps sur base comme en OPEX.</div>
+          </div>
+          <img class="holo-medaille-image" src="images/medailles/ruban-soldat-confirme.png" alt="Ruban du Soldat Confirmé"
+               onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
+        </div>
+      </div>
 
     <div class="holo-status">
       <span><span class="blink">●</span> CONNEXION SÉCURISÉE</span>
