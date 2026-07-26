@@ -340,14 +340,20 @@
           color: var(--text-white);
         }
 
-                .holo-medaille-image {
+              .holo-medaille-image {
           width: 200px;
-          height: 200px;
-          object-fit: cover;
+          height: 250px;
+          object-fit: contain;
           border: 1px solid var(--holo-dim);
           background: rgba(0,8,20,0.5);
           flex-shrink: 0;
           transition: all 0.3s;
+          padding: 10px;
+        }
+
+        .holo-medaille-image.ruban {
+          width: 250px;
+          height: 100px;
         }
 
         .holo-medaille-image:hover {
@@ -364,14 +370,19 @@
           font-style: italic;
         }
 
-        @media (max-width: 600px) {
+                @media (max-width: 600px) {
           .holo-medaille-item {
             flex-direction: column-reverse;
           }
 
           .holo-medaille-image {
             width: 160px;
-            height: 160px;
+            height: 200px;
+          }
+
+          .holo-medaille-image.ruban {
+            width: 200px;
+            height: 80px;
           }
         }
       </style>
@@ -521,7 +532,7 @@
             <div class="holo-medaille-name">Ruban de l'Excellence Médicale</div>
             <div class="holo-medaille-desc">Médaille remise au membre ayant prouvé son engagement dans la médecine et prouvé sa valeur dans celle-ci, jamais pour rien au monde ils ne trahiront leur code.</div>
           </div>
-          <img class="holo-medaille-image" src="images/medailles/ruban-excellence-medicale.png" alt="Ruban de l'Excellence Médicale"
+                    <img class="holo-medaille-image ruban" src="images/medailles/ruban-excellence-medicale.png" alt="Ruban de l'Excellence Médicale"
                onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
         </div>
         <div class="holo-medaille-item">
@@ -561,7 +572,7 @@
             <div class="holo-medaille-name">Ruban de Félicitations de l'État-Major</div>
             <div class="holo-medaille-desc">Remis au membre ayant mené à bien plusieurs missions et objectifs donnés par le comité et fournissant un travail exemplaire.</div>
           </div>
-          <img class="holo-medaille-image" src="images/medailles/ruban-felicitations-etat-major.png" alt="Ruban de Félicitations de l'État-Major"
+                    <img class="holo-medaille-image ruban" src="images/medailles/ruban-felicitations-etat-major.png" alt="Ruban de Félicitations de l'État-Major"
                onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
         </div>
 
@@ -570,7 +581,7 @@
             <div class="holo-medaille-name">Ruban de l'Encouragement de l'État-Major</div>
             <div class="holo-medaille-desc">Ruban remis après vote du comité aux personnes ayant travaillé et fait des progrès notables.</div>
           </div>
-          <img class="holo-medaille-image" src="images/medailles/ruban-encouragement-etat-major.png" alt="Ruban de l'Encouragement de l'État-Major"
+                    <img class="holo-medaille-image ruban" src="images/medailles/ruban-encouragement-etat-major.png" alt="Ruban de l'Encouragement de l'État-Major"
                onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
         </div>
 
@@ -579,7 +590,7 @@
             <div class="holo-medaille-name">Ruban de l'Encouragement</div>
             <div class="holo-medaille-desc">Souvent accordé aux républicains ayant fait plusieurs missions, étant habitués à celles-ci.</div>
           </div>
-          <img class="holo-medaille-image" src="images/medailles/ruban-encouragement.png" alt="Ruban de l'Encouragement"
+                    <img class="holo-medaille-image ruban" src="images/medailles/ruban-encouragement.png" alt="Ruban de l'Encouragement"
                onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
         </div>
 
@@ -588,7 +599,7 @@
             <div class="holo-medaille-name">Ruban de la Discipline Exemplaire</div>
             <div class="holo-medaille-desc">Républicain ayant fait preuve d'un comportement exemplaire en tout temps sur base comme en OPEX.</div>
           </div>
-          <img class="holo-medaille-image" src="images/medailles/ruban-discipline-exemplaire.png" alt="Ruban de la Discipline Exemplaire"
+                    <img class="holo-medaille-image ruban" src="images/medailles/ruban-discipline-exemplaire.png" alt="Ruban de la Discipline Exemplaire"
                onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
         </div>
 
@@ -597,7 +608,7 @@
             <div class="holo-medaille-name">Ruban de l'Instructeur Aguerri</div>
             <div class="holo-medaille-desc">Républicain ayant mis un point d'honneur à la formation des jeunes.</div>
           </div>
-          <img class="holo-medaille-image" src="images/medailles/ruban-instructeurs-agueris.png" alt="Ruban de l'Instructeur Aguerri"
+                    <img class="holo-medaille-image ruban" src="images/medailles/ruban-instructeurs-agueris.png" alt="Ruban de l'Instructeur Aguerri"
                onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
         </div>
 
@@ -606,7 +617,7 @@
             <div class="holo-medaille-name">Ruban du Soldat Confirmé</div>
             <div class="holo-medaille-desc">Républicain ayant fait preuve d'un comportement exemplaire en tout temps sur base comme en OPEX.</div>
           </div>
-          <img class="holo-medaille-image" src="images/medailles/ruban-soldat-confirme.png" alt="Ruban du Soldat Confirmé"
+                    <img class="holo-medaille-image ruban" src="images/medailles/ruban-soldat-confirme.png" alt="Ruban du Soldat Confirmé"
                onerror="this.classList.add('placeholder');this.alt='';this.src='';this.textContent='Image'">
         </div>
       </div>
