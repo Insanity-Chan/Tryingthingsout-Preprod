@@ -1,13 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Exo+2:wght@400;500;600&display=swap');
 
 :root {
-  --holo-cyan: #00f0ff;
+  --holo-cyan: #7fdcff;        /* BLEU CLAIR : titres, liens, texte secondaire */
+  --holo-neon: #00f0ff;        /* CYAN NÉON : cadres, bordures, lueurs */
+  --holo-accent: #ffffff;      /* BLANC : onglet actif, icônes, titres de cartes */
   --holo-blue: #0a84ff;
   --holo-deep: #001a33;
-  --holo-glow: rgba(0, 240, 255, 0.6);
-  --holo-dim: rgba(0, 240, 255, 0.15);
+  --holo-glow: rgba(0, 240, 255, 0.5);
+  --holo-dim: rgba(0, 240, 255, 0.25);
+  --panel: rgba(0, 14, 28, 0.82);
   --bg-dark: #000814;
-  --text-white: #e0e8f0;
+  --text-white: #e0f4fb;
+  --hud-top: rgba(0, 34, 52, 0.96);
+  --hud-bottom: rgba(0, 12, 22, 0.96);
+  --hud-frame-top: rgba(0, 12, 22, 0.9);
+  --hud-frame-bottom: rgba(0, 6, 14, 0.92);
+  --hud-tab-top: rgba(0, 44, 66, 0.9);
+  --hud-tab-bottom: rgba(0, 16, 28, 0.95);
+  --hud-accent-top: #ffffff;
+  --hud-accent-bottom: #a9e6ff;
+  --hud-accent-text: #00141f;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -17,7 +29,7 @@ a, a:visited { color: var(--holo-cyan); text-decoration: none; }
 body {
   background: var(--bg-dark);
   color: var(--text-white);
-  font-family: 'Share Tech Mono', monospace;
+  font-family: 'Exo 2', monospace;
   overflow-x: hidden;
   min-height: 100vh;
   position: relative;
@@ -59,7 +71,7 @@ body::after {
 }
 
 .holo-header h1 {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
   font-weight: 900;
   font-size: clamp(2rem, 6vw, 4rem);
   letter-spacing: 0.3em;
@@ -119,7 +131,7 @@ body::after {
   border: 1px solid var(--holo-dim);
   color: var(--holo-cyan);
   padding: 8px 24px;
-  font-family: 'Share Tech Mono', monospace;
+  font-family: 'Exo 2', monospace;
   font-size: 0.85rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -148,7 +160,7 @@ body::after {
 }
 
 .holo-panel h2 {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
   font-size: 1.3rem;
   letter-spacing: 0.2em;
   margin-bottom: 15px;
@@ -202,7 +214,7 @@ body::after {
   border: 1px solid var(--holo-dim);
   color: var(--text-white);
   padding: 10px 14px;
-  font-family: 'Share Tech Mono', monospace;
+  font-family: 'Exo 2', monospace;
   font-size: 0.9rem;
   margin-bottom: 12px;
   transition: all 0.3s;
@@ -220,7 +232,7 @@ body::after {
   border: 1px solid var(--holo-cyan);
   color: var(--holo-cyan);
   padding: 10px 30px;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
   font-size: 0.85rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -282,7 +294,7 @@ body::after {
 }
 
 .holo-card .value {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
   font-size: 1.5rem;
   margin-top: 5px;
   text-shadow: 0 0 10px var(--holo-glow);
@@ -336,7 +348,7 @@ body::after {
 }
 
 .holo-section h2 {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
   font-size: 1.3rem;
   letter-spacing: 0.2em;
   margin-bottom: 15px;
@@ -346,7 +358,7 @@ body::after {
 }
 
 .holo-section h3 {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
   font-size: 1rem;
   letter-spacing: 0.15em;
   margin: 25px 0 10px;
@@ -442,7 +454,7 @@ body::after {
 }
 
 .holo-rank-category {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
   font-size: 1rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -483,7 +495,7 @@ body::after {
 }
 
 .rank-num {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
   font-weight: 700;
   font-size: 0.8rem;
   color: var(--bg-dark);
@@ -521,7 +533,7 @@ body::after {
   border: 1px solid var(--holo-cyan);
   background: rgba(0,240,255,0.05);
   text-align: center;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
   font-size: 1.1rem;
   line-height: 2;
   letter-spacing: 0.05em;
@@ -605,7 +617,7 @@ body::after {
   top: 0;
   width: 65px;
   text-align: right;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--holo-cyan);
@@ -615,7 +627,7 @@ body::after {
 }
 
 .holo-event-title {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
   font-size: 1.1rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -750,7 +762,7 @@ body::after {
 }
 
 .holo-code-card .code-name {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
   font-size: 1.3rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -823,4 +835,401 @@ body::after {
   .holo-event-image {
     max-width: 100%;
   }
+}
+
+
+/* =====================================================
+   HUD SWTOR — HOLONET RÉPUBLIQUE
+   3 couleurs : cyan néon (cadres) · bleu clair (titres) · blanc (accents)
+   ===================================================== */
+
+body {
+  background:
+    linear-gradient(180deg, rgba(0, 8, 20, 0.82), rgba(0, 8, 20, 0.95)),
+    url('images/fond.png') center / cover no-repeat fixed;
+  font-family: 'Exo 2', 'Segoe UI', sans-serif;
+  font-size: 0.95rem;
+}
+body::before,
+body::after { content: none; animation: none; }
+
+/* ---------- Fenêtre : barre de titre ---------- */
+.holo-header {
+  position: relative;
+  isolation: isolate;
+  margin: 20px 20px 0;
+  padding: 16px 24px 16px 104px;
+  text-align: left;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: var(--holo-neon);
+  clip-path: polygon(18px 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 0 100%, 0 18px);
+}
+.holo-header::before {
+  content: '';
+  position: absolute;
+  top: 2px; right: 2px; bottom: 0; left: 2px;
+  width: auto; height: auto;
+  z-index: -1;
+  background: linear-gradient(180deg, var(--hud-top), var(--hud-bottom));
+  clip-path: polygon(17px 0, calc(100% - 17px) 0, 100% 17px, 100% 100%, 0 100%, 0 17px);
+}
+.holo-header::after {
+  content: '';
+  position: absolute;
+  left: 26px; top: 50%;
+  width: 60px; height: 60px;
+  transform: translateY(-50%);
+  background: url('images/ICONE.png') center / contain no-repeat;
+}
+.holo-header h1 {
+  position: relative;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 1.1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 0 12px var(--holo-glow);
+  animation: none;
+}
+.holo-header .subtitle {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--holo-cyan);
+  opacity: 1;
+}
+
+/* ---------- Fenêtre : cadre principal ---------- */
+.holo-frame {
+  position: relative;
+  isolation: isolate;
+  margin: 0 20px 20px;
+  padding: 20px 22px 16px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  background: var(--holo-neon);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 18px 100%, 0 calc(100% - 18px));
+}
+.holo-frame::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 2px; bottom: 2px; left: 2px;
+  width: auto; height: auto;
+  border: 0;
+  box-shadow: none;
+  z-index: -1;
+  background: linear-gradient(180deg, var(--hud-frame-top), var(--hud-frame-bottom));
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 16px 100%, 0 calc(100% - 16px));
+}
+.holo-frame::after { content: none; }
+
+/* ---------- Onglets biseautés ---------- */
+.holo-nav {
+  display: flex;
+  justify-content: flex-start;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.holo-nav a { text-decoration: none; }
+.holo-nav button {
+  position: relative;
+  isolation: isolate;
+  padding: 10px 24px;
+  border: 0;
+  border-radius: 0;
+  background: var(--holo-neon);
+  box-shadow: none;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-white);
+  text-shadow: none;
+  cursor: pointer;
+  clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%, 0 12px);
+}
+.holo-nav button::before {
+  content: '';
+  position: absolute;
+  top: 2px; right: 2px; bottom: 0; left: 2px;
+  z-index: -1;
+  background: linear-gradient(180deg, var(--hud-tab-top), var(--hud-tab-bottom));
+  clip-path: polygon(11px 0, calc(100% - 11px) 0, 100% 11px, 100% 100%, 0 100%, 0 11px);
+}
+.holo-nav button:hover {
+  background: var(--holo-cyan);
+  box-shadow: none;
+  text-shadow: none;
+}
+.holo-nav button:hover::before {
+  background: linear-gradient(180deg, rgba(20, 60, 80, 0.9), rgba(8, 24, 34, 0.95));
+}
+.holo-nav button.active {
+  background: var(--holo-accent);
+  color: var(--hud-accent-text);
+  box-shadow: none;
+  text-shadow: none;
+}
+.holo-nav button.active::before {
+  background: linear-gradient(180deg, var(--hud-accent-top), var(--hud-accent-bottom));
+}
+
+/* ---------- Panneaux : coins en équerre ---------- */
+.holo-panel.active { display: block; margin-top: 0; }
+.holo-panel.active,
+.holo-section {
+  --br: var(--holo-neon);
+  display: block;
+  margin-top: 18px;
+  padding: 18px 20px;
+  border: 1px solid var(--holo-dim);
+  border-radius: 4px;
+  box-shadow: inset 0 0 25px rgba(0, 240, 255, 0.06);
+  background:
+    linear-gradient(var(--br), var(--br)) top left / 18px 2px no-repeat,
+    linear-gradient(var(--br), var(--br)) top left / 2px 18px no-repeat,
+    linear-gradient(var(--br), var(--br)) top right / 18px 2px no-repeat,
+    linear-gradient(var(--br), var(--br)) top right / 2px 18px no-repeat,
+    linear-gradient(var(--br), var(--br)) bottom left / 18px 2px no-repeat,
+    linear-gradient(var(--br), var(--br)) bottom left / 2px 18px no-repeat,
+    linear-gradient(var(--br), var(--br)) bottom right / 18px 2px no-repeat,
+    linear-gradient(var(--br), var(--br)) bottom right / 2px 18px no-repeat,
+    var(--panel);
+  animation: panelFade 0.5s ease;
+}
+
+/* ---------- Titres ---------- */
+.holo-panel h2,
+.holo-section h2 {
+  position: relative;
+  margin: 0 0 14px;
+  padding: 0 0 0 14px;
+  border: 0;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--holo-cyan);
+  text-shadow: none;
+}
+.holo-panel h2::before,
+.holo-section h2::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0.2em; bottom: 0.2em;
+  width: 4px;
+  background: var(--holo-accent);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+.holo-section h3 {
+  margin: 22px 0 10px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--holo-accent);
+  opacity: 1;
+}
+.holo-section h4 {
+  margin: 18px 0 8px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--holo-cyan);
+  opacity: 1;
+}
+.holo-panel p,
+.holo-section p {
+  line-height: 1.7;
+  margin-bottom: 12px;
+  color: var(--text-white);
+  opacity: 0.92;
+}
+.holo-intro { font-style: italic; opacity: 0.75; }
+.holo-note  { font-size: 0.8rem; font-style: italic; opacity: 0.65; }
+
+/* ---------- Liens, sommaire, listes, tableaux ---------- */
+a, a:visited { color: var(--holo-cyan); text-decoration: none; }
+.holo-sommaire { display: flex; flex-direction: column; gap: 8px; }
+.holo-link {
+  display: block;
+  padding: 10px 16px;
+  border: 1px solid rgba(127, 220, 255, 0.25);
+  border-left: 3px solid var(--holo-accent);
+  border-radius: 4px;
+  background: rgba(0, 14, 28, 0.55);
+  color: var(--holo-cyan);
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  transition: none;
+}
+.holo-link:hover {
+  border-color: var(--holo-neon);
+  border-left-color: var(--holo-accent);
+  background: rgba(0, 240, 255, 0.08);
+  padding-left: 22px;
+  box-shadow: 0 0 10px var(--holo-glow);
+}
+.holo-list li::before { color: var(--holo-accent); text-shadow: none; }
+.holo-list li strong { color: var(--holo-cyan); text-shadow: none; }
+.holo-table th { color: var(--holo-cyan); border-bottom: 1px solid var(--holo-neon); text-shadow: none; }
+.holo-table td { color: var(--text-white); }
+
+/* ---------- Accueil : bannière ---------- */
+.accueil-hero {
+  display: flex;
+  align-items: center;
+  min-height: 230px;
+  margin-top: 0;
+  padding: 30px 40px;
+  border: 1px solid var(--holo-dim);
+  border-radius: 4px;
+  background:
+    linear-gradient(90deg, rgba(0, 8, 20, 0.94) 0%, rgba(0, 8, 20, 0.7) 45%, rgba(0, 8, 20, 0.15) 100%),
+    url('images/fond.png') center / cover no-repeat,
+    #001a33;
+}
+.accueil-hero .hero-texte { max-width: 560px; }
+.hero-titre {
+  margin-bottom: 10px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 2.1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--holo-accent);
+  text-shadow: 0 0 14px rgba(0, 240, 255, 0.5);
+}
+.accueil-hero p { line-height: 1.7; color: var(--holo-cyan); }
+.accueil-hero em { color: var(--holo-accent); font-style: italic; }
+
+/* ---------- Accueil : cartes ---------- */
+.accueil-cartes,
+.holo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin-top: 0;
+}
+a.accueil-carte,
+a.accueil-carte:visited,
+.holo-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid rgba(127, 220, 255, 0.28);
+  border-radius: 4px;
+  background: rgba(0, 14, 28, 0.6);
+  color: var(--text-white);
+  transition: none;
+}
+a.accueil-carte:hover,
+.holo-card:hover {
+  border-color: var(--holo-neon);
+  background: rgba(0, 40, 60, 0.55);
+  box-shadow: 0 0 16px var(--holo-glow);
+}
+.carte-icone {
+  flex: 0 0 54px;
+  width: 54px; height: 54px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--holo-accent);
+  border-radius: 4px;
+  color: var(--holo-accent);
+  background: rgba(255, 255, 255, 0.07);
+}
+.carte-icone svg {
+  width: 28px; height: 28px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.carte-titre,
+.holo-card .label {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--holo-accent);
+  opacity: 1;
+  text-shadow: none;
+}
+.carte-texte {
+  margin-top: 2px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-white);
+  opacity: 0.85;
+}
+.holo-card .value {
+  margin-top: 2px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* ---------- Barre d'état : jauge de signal + logo ---------- */
+.holo-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--holo-dim);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: var(--holo-cyan);
+  opacity: 0.95;
+}
+.holo-status .blink {
+  display: inline-block;
+  width: 16px; height: 12px;
+  margin-right: 8px;
+  font-size: 0;
+  vertical-align: -1px;
+  animation: none;
+  background:
+    linear-gradient(var(--holo-neon), var(--holo-neon)) 0 100% / 3px 3px no-repeat,
+    linear-gradient(var(--holo-neon), var(--holo-neon)) 4px 100% / 3px 6px no-repeat,
+    linear-gradient(var(--holo-neon), var(--holo-neon)) 8px 100% / 3px 9px no-repeat,
+    linear-gradient(var(--holo-neon), var(--holo-neon)) 12px 100% / 3px 12px no-repeat;
+}
+.holo-status > span:last-child::after {
+  content: '';
+  display: inline-block;
+  width: 18px; height: 18px;
+  margin-left: 8px;
+  vertical-align: -4px;
+  background: url('images/ICONE.png') center / contain no-repeat;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+  .holo-header { margin: 10px 10px 0; padding: 12px 14px 12px 70px; }
+  .holo-header::after { left: 12px; width: 46px; height: 46px; }
+  .holo-header h1 { font-size: 1.35rem; }
+  .holo-frame { margin: 0 10px 10px; padding: 14px 12px; }
+  .holo-nav button { padding: 8px 14px; font-size: 0.8rem; }
+  .accueil-hero { padding: 20px; min-height: 180px; }
+  .hero-titre { font-size: 1.5rem; }
+  .holo-status { flex-direction: column; gap: 6px; }
 }
